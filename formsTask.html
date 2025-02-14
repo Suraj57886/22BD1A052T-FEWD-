@@ -1,0 +1,83 @@
+<!-- Understanding GET and POST Methods:
+
+Create an HTML page that contains two forms for submitting user information (Name and Password).
+GET Method:
+
+The first form should use the GET method for submitting the data to a PHP script (action.php).
+The form should include two input fields: one for Name (text input) and another for Password (password input).
+The form should have a submit button labeled "Submit (GET)".
+On form submission, the data should be sent via the URL using the GET method (visible in the URL).
+POST Method:
+
+The second form should use the POST method for submitting the data to the same PHP script (action.php).
+It should have the same input fields (Name and Password) and a submit button labeled "Submit (POST)".
+On form submission, the data should be sent via the HTTP body using the POST method (invisible in the URL).
+Behavior Testing:
+
+Test the forms by submitting the data and observe the URL after submission for the GET method (data appears in the URL).
+For the POST method, check if the data remains hidden and isn't displayed in the URL. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            border-radius: 5px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>GET and POST Methods</h2>
+
+    <h3>Submit using GET</h3>
+    <form action="action.php" method="GET">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Submit (GET)</button>
+    </form>
+
+    <h3>Submit using POST</h3>
+    <form action="action.php" method="POST">
+        <label for="namePost">Name:</label>
+        <input type="text" id="namePost" name="name" required>
+        
+        <label for="passwordPost">Password:</label>
+        <input type="password" id="passwordPost" name="password" required>
+        
+        <button type="submit">Submit (POST)</button>
+    </form>
+</body>
+</html>
+
